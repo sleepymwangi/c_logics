@@ -1,0 +1,13 @@
+int* dynamicArray = (int*)malloc(5 * sizeof(int)); // Allocate initial memory for 5 integers
+
+// Resize the array to hold 10 integers
+int* resizedArray = (int*)realloc(dynamicArray, 10 * sizeof(int));
+
+if (resizedArray != NULL) {
+    dynamicArray = resizedArray; // Update the pointer to the resized array
+    // The original content of dynamicArray is preserved in the resizedArray
+} else {
+    // Error handling if realloc fails
+    // The original dynamicArray pointer still points to the original allocated memory
+}
+
